@@ -13,7 +13,7 @@ and do some processing afterwards like triggering a script.
 
 To run this application simply deploy it on a Wildfly server and check the logs.
 
-See our example for Spring https://github.com/czetsuya/jpa-to-spring-events/blob/master/README.md
+See our example for Spring https://github.com/czetsuya/jpa-to-spring-events
 
 ## Authors
 
