@@ -24,20 +24,20 @@ import com.czetsuya.data.entity.Book;
 @Startup
 public class StartupListener {
 
-    @Inject
-    private BookService bookService;
+	@Inject
+	private BookService bookService;
 
-    @PostConstruct
-    public void createUpdateRemove() {
-        System.out.println("Running tests. Check the logs...");
+	@PostConstruct
+	public void createUpdateRemove() {
+		System.out.println("Running tests. Check the logs...");
 
-        Book book = new Book();
-        book.setName("Mahouka Koukou");
-        bookService.create(book);
+		Book book = new Book();
+		book.setName("Mahouka Koukou");
+		bookService.create(book);
 
-        book.setName("Gate Jietai");
-        bookService.update(book);
+		book.setName("Gate Jietai");
+		bookService.update(book);
 
-        bookService.delete(book);
-    }
+		bookService.delete(book);
+	}
 }
