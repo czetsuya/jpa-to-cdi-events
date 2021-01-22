@@ -5,7 +5,7 @@
  * This source code is license under the license found in the 
  * License.md file in the root directory of this source tree.
  */
-package com.czetsuya.data.entity;
+package com.czetsuyatech.data.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -13,7 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.czetsuya.event.JpatoCdiListener;
+import com.czetsuyatech.event.EntityListener;
 
 import lombok.Data;
 
@@ -25,12 +25,12 @@ import lombok.Data;
  */
 @Entity
 @Data
-@EntityListeners(JpatoCdiListener.class)
+@EntityListeners(EntityListener.class)
 public class Book {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    private String name;
+	private String name;
 }

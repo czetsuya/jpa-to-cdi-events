@@ -11,7 +11,47 @@ and do some processing afterwards like triggering a script.
 
 ## Execution
 
-To run this application simply deploy it on a Wildfly server and check the logs.
+To run this application you must have docker installed on your local machine.
+
+Run Wildfly in docker with the following command:
+
+```sh
+docker run --name wildfly_21 -p 8080:8080 -p 9990:9990 -it jboss/wildfly:21.0.1.Final /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0
+```
+
+Set the Wildfly admin and password by running WILDFLY_HOME/bin/add-user.bat.
+
+```sh
+docker exec -it wildfly_21 /opt/jboss/wildfly/bin/add-user.sh
+```
+
+With the following choices:
+
+Type of user: Management User
+
+User: admin
+
+Details of new user: a. Update the existing user and password and roles
+
+Password: admin
+
+Group: Admin
+
+Deploy and run this application in Wildfly using maven (must be executed in the project's root directory):
+
+```sh
+mvn install wildfly:deploy
+```
+
+It will prompt for username and password. Enter admin/admin.
+
+Check the log in Wildfly and you should see the observer logs.
+
+To undeploy:
+
+```sh
+mvn wildfly:undeploy
+```
 
 See our example for Spring https://github.com/czetsuya/jpa-to-spring-events
 

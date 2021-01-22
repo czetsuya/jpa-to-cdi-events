@@ -5,7 +5,7 @@
  * This source code is license under the license found in the 
  * License.md file in the root directory of this source tree.
  */
-package com.czetsuya.event;
+package com.czetsuyatech.event.qualifier;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
@@ -27,6 +27,6 @@ import javax.inject.Qualifier;
 @Qualifier
 @Target({ METHOD, FIELD, PARAMETER, TYPE })
 @Retention(RUNTIME)
-public @interface Removed {
+public @interface Updated {
 
 }
